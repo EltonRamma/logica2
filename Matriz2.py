@@ -9,14 +9,23 @@ matriz = [
 ]
 
 def reserva_assento(cinema, linha, coluna):
-    if 0 <= linha < 5 and 0 <= coluna < 8:
-        if cinema[linha][coluna] == 0:
-            cinema[linha][coluna] = 1
-            print(f"A cadeira [{linha}][{coluna}] foi reservada.")
+    posicao_l = linha-1
+    posicao_c = coluna-1
+    if 0 <= posicao_l < 5 and 0 <= posicao_c < 8:
+        if cinema[posicao_l][posicao_c] == 0:
+            cinema[posicao_l][posicao_c] = 1
+            print(f"\nA cadeira [{linha}][{coluna}] foi reservada.")
         else:
-            print(f"A cadeira [{linha}][{coluna}] já está reservada.")
+            print(f"\nA cadeira [{linha}][{coluna}] já está reservada.")
     else:
-        print("Posição inválida. Escolha uma linha entre 0-4 e uma coluna entre 0-7.")
+        print("\nPosição inválida. Escolha uma linha entre 0-4 e uma coluna entre 0-7.")
 
+def exibir(cinema, dim_linha, dim_coluna):
+    for i in range(dim_linha):
+        for j in range(dim_coluna):
+            print(cinema[i][j], end=' ')
+        print()
+
+exibir(cinema, 5, 8)
 reserva_assento(cinema, 2, 5)
-reserva_assento(cinema, 2, 5) 
+exibir(cinema, 5, 8)
