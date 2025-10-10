@@ -1,0 +1,22 @@
+cinema = [[0 for _ in range(8)] for _ in range(5)]
+
+matriz = [
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [9, 10, 11, 12, 13, 14, 15, 16],
+    [17, 18, 19, 20, 21, 22, 23, 24],
+    [25, 26, 27, 28, 29, 30, 31, 32],
+    [33, 34, 35, 36, 37, 38, 39, 40]
+]
+
+def reserva_assento(cinema, linha, coluna):
+    if 0 <= linha < 5 and 0 <= coluna < 8:
+        if cinema[linha][coluna] == 0:
+            cinema[linha][coluna] = 1
+            print(f"A cadeira [{linha}][{coluna}] foi reservada.")
+        else:
+            print(f"A cadeira [{linha}][{coluna}] já está reservada.")
+    else:
+        print("Posição inválida. Escolha uma linha entre 0-4 e uma coluna entre 0-7.")
+
+reserva_assento(cinema, 2, 5)
+reserva_assento(cinema, 2, 5) 
